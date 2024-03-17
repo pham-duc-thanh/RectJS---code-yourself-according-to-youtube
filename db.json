@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "fullname": "Hồ Thị Xinhsdf",
+      "username": "xinhxinh",
+      "email": "xinh@gamil.com",
+      "phone": "0985195353"
+    },
+    {
+      "id": "4",
+      "fullname": "Trần Văn Tiến",
+      "username": "tientran",
+      "email": "trantien@gamil.com",
+      "phone": "0832453453"
+    },
+    {
+      "id": "5",
+      "fullname": "Lê Thị Thuý Anh",
+      "username": "anle",
+      "email": "lean@gamil.com",
+      "phone": "63753453443"
+    },
+    {
+      "id": "85af",
+      "fullname": "Phạm",
+      "username": "Thanh",
+      "email": "taothichmi2009@gmail.com",
+      "phone": "07085774175"
+    },
+    {
+      "id": "5245",
+      "fullname": "Phạm",
+      "username": "Thanh",
+      "email": "taothichmi2009@gmail.com",
+      "phone": "07085774175"
+    },
+    {
+      "id": "426d",
+      "fullname": "Phạm",
+      "username": "Thanh",
+      "email": "taothichmi2009@gmail.com",
+      "phone": "07085774175"
+    },
+    {
+      "id": "9f8b",
+      "fullname": "Phạm",
+      "username": "Thanhsadfadsf",
+      "email": "chode0810@gmail.com",
+      "phone": "07085774175"
+    },
+    {
+      "id": "1ae1",
+      "fullname": "fghjfgds",
+      "username": "asdfasd",
+      "email": "taothichmi2009@gmail.com",
+      "phone": "07085774175"
+    },
+    {
+      "id": "773c",
+      "fullname": "xinh ",
+      "username": "asdfdsga",
+      "email": "ainonglailai@gmail.com",
+      "phone": "07085774175"
+    }
+  ]
+}
