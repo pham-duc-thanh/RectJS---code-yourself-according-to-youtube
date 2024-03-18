@@ -1,0 +1,138 @@
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  height: 100vh;
+}
+
+.user-list-card {
+  width: 75%;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid hsl(210, 14%, 89%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-custom {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 16px;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.table-custom tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table thead td {
+  font-weight: 600;
+  font-size: 20px /* Điều chỉnh kích thước theo nhu cầu */
+}
+
+.btn-add {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #28a745;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-add:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+  outline: 0;
+}
+
+.btn-read {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    font-size: 14px; 
+    border-radius: 4px;
+    /* transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+    color: #fff;
+    background-color: #178da0; 
+    border-color: #178da0;
+    line-height: 1.5;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.btn-read:hover {
+    background-color: #0c4f59;
+    border-color: #469fac;
+}
+
+.btn-edit {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff; 
+    border-color: #007bff;
+    line-height: 1.5;
+    border-radius: 4px;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background-color: #0a3d73;
+    border-color: #043569;
+}
+
+.btn-delete {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 4px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #fff;
+    background-color: #dc3545; 
+    border-color: #dc3545;
+    line-height: 1.5;
+    border-radius: 0.2rem; 
+}
+
+.btn-delete:hover {
+    background-color: #9d0b19; 
+    border-color: #940917;
+}

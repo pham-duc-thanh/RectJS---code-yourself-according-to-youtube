@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/home.css'
 
 const URL_USER = "https://65f64ed641d90c1c5e0ab776.mockapi.io/api/users";
 
@@ -26,12 +27,16 @@ const Home = () => {
 
     const navigate = useNavigate();
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
+
+    // user-list-card, 
+    <div className='user-list-container'>
         <h1>List of Users</h1>
-        <div className='w-75 rounded bg-white border shadow p-4'>
-            <div className='d-flex justify-content-end'>
-                <Link to="/create" className='btn btn-success'>Add +</Link>
+        <div className='user-list-card'>
+            <div className='card-header'>
+                <Link to="/create" className='btn-add'>Add +</Link>
             </div>
+
+            {/* table table-striped */}
             <table className='table table-striped'>
                 <thead>
                     <tr>
@@ -55,9 +60,9 @@ const Home = () => {
                                 <td>{d.email}</td>
                                 <td>{d.phone}</td>
                                 <td>
-                                    <Link to={`/read/${d.id}`} className='btn btn-sm btn-info me-2'>Read</Link>
-                                    <Link to={`/update/${d.id}`} className='btn btn-sm btn-primary me-2'>Edit</Link>
-                                    <button onClick={e => handleDelete(d.id)} className='btn btn-sm btn-danger'>Delete</button>
+                                    <Link to={`/read/${d.id}`} className='btn-read'>Read</Link>
+                                    <Link to={`/update/${d.id}`} className='btn-edit'>Edit</Link>
+                                    <button onClick={e => handleDelete(d.id)} className='btn-delete'>Delete</button>
                                 </td>
                             </tr>
                         ))

@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import { BrowserRouter, Routes , Route } from "react-router-dom"
-import Home from './Home';
-import Create from './Create';
-import Update from './Update';
-import Read from './Read';
+import Home from '../Components/Home';
+import Create from '../Components/Create';
+import Update from '../Components/Update';
+import Read from '../Components/Read';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

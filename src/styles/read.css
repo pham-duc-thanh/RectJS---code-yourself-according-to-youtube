@@ -1,0 +1,26 @@
+.container-read {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.read-list-card {
+  width: 50%;
+  border: 1px solid #ced4da; 
+  background-color: #fff; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+  padding: 20px;
+  padding-top: 12px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+}
+
+.container-input {
+  margin-bottom: 12px;
+}
+
+
+

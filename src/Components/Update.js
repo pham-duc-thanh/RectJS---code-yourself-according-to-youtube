@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react'
+import { Link,  useNavigate,  useParams } from 'react-router-dom'
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import '../styles/update.css'
 
 const URL_USER = "https://65f64ed641d90c1c5e0ab776.mockapi.io/api/users";
 
-const Create = () => {
+const Update = () => {
+
+  // const [data, setData] = useState([]);
+  const { id } = useParams();
   const [values, setValues] = useState({
     fullname: "",
     username: "",
@@ -52,81 +56,97 @@ const Create = () => {
     }));
   };
 
-  const navigate = useNavigate();
+  
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  useEffect(() => {
     axios
-      .post(URL_USER, values)
+      .get(`${URL_USER}/${id}`)
+      .then(res => setValues(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const navigate = useNavigate();
+  
+  const handleUpdate = (e) => {
+    e.preventDefault(); 
+
+    const URL_USER = "https://65f64ed641d90c1c5e0ab776.mockapi.io/api/users";
+    axios.put(URL_USER + "/" + id, values)
       .then((res) => {
         console.log("res...", res);
         navigate("/");
       })
       .catch((err) => console.log(err));
-  };
+  }
 
   return (
-    <div className="d-flex w-100 vh-100 justify-content-center align-items-center bg-light">
-      <div className="w-50 border bg-white shadow px-5 pt-3 pb-5 rounded">
-        <h1>Add a User</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-2">
+    <div className="container-update">
+      <div className="update-list-card">
+        <h1>Update User</h1>
+        <form onSubmit={handleUpdate}>
+          <div className="container-input">
             <label htmlFor="name">FullName:</label>
             <input
               type="text"
               name="name"
-              className="form-control"
+              className="input"
               placeholder="Enter Name"
+              value={values.fullname}
               onChange={handleChangeFullname}
             />
           </div>
 
-          <div className="mb-2">
+          <div className="container-input">
             <label htmlFor="username">FullName:</label>
             <input
               type="text"
               name="username"
-              className="form-control"
+              className="input"
               placeholder="Enter Username"
+              value={values.username}
               onChange={handleChangeUsername}
             />
           </div>
 
-          <div className="mb-2">
+          <div className="container-input">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
               name="email"
-              className="form-control"
+              className="input"
               placeholder="Enter Email"
+              value={values.email}
               onChange={handleChangeEmail}
             />
           </div>
 
-          <div className="mb-2">
+          <div className="container-input">
             <label htmlFor="phone">Phone:</label>
             <input
               type="text"
               name="phone"
-              className="form-control"
+              className="input"
               placeholder="Enter Phone"
+              value={values.phone}
               onChange={handleChangePhone}
             />
           </div>
-          <button
-            className="btn btn-success
-            "
-          >
-            Submit
-          </button>
-          <Link to="/" className="btn btn-primary ms-3">
-            Back
-          </Link>
+
+          <div className='container-btn'>
+            <button
+              className="btn btn-success"
+            >
+              Update
+            </button>
+            <Link to="/" className="btn btn-primary ms-3">
+              Back
+            </Link>
+          </div>
+          
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Create;
+export default Update
