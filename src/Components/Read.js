@@ -38,8 +38,10 @@ const Read = () => {
           </div>
 
         {/* btn btn-success */}
+        <div className="container-btn">
           <Link to={`/update/${id}`} className="btn btn-success">Edit</Link>
           <Link to="/" className="btn btn-primary ms-3">Back</Link>
+        </div>
       </div>
     </div>
   );

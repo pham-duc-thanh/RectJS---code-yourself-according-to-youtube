@@ -20,7 +20,12 @@
 
 .container-input {
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: wrap;
 }
 
-
+.container-btn {
+  display: flex;
+  justify-content: space-between;
+}
 

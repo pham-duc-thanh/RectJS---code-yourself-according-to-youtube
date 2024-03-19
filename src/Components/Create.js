@@ -13,13 +13,20 @@ const Create = () => {
     phone: "",
   });
 
+  const [errors, setErrors] = useState({
+    fullname: "",
+    username: "",
+    email: "",
+    phone: "",
+  });
+
   const handleChangeFullname = (e) => {
     const newVal = e.target.value;
     console.log("newVal...", newVal);
 
     setValues((prev) => ({
       ...prev,
-      fullname: newVal,
+      fullname: newVal ,
     }));
   };
 
@@ -58,6 +65,32 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!values.fullname.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        fullname: "Hãy nhập fullname"
+      }));
+      return; // Dừng hàm handleSubmit nếu có lỗi
+    } else if(!values.username.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        username: "Hãy nhập username"
+      }));
+      return; // Dừng hàm handleSubmit nếu có lỗi
+    } else if(!values.email.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        email: "Hãy nhập email"
+      }));
+      return; // Dừng hàm handleSubmit nếu có lỗi
+    } else if(!values.phone.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Hãy nhập phone"
+      }));
+      return; // Dừng hàm handleSubmit nếu có lỗi
+    }
+
     axios
       .post(URL_USER, values)
       .then((res) => {
@@ -82,7 +115,9 @@ const Create = () => {
               placeholder="Enter Name"
               onChange={handleChangeFullname}
             />
+             
           </div>
+          <p style={{color: "red"}} className="error">{errors.fullname}</p>
 
           <div className="container-input">
             <label htmlFor="username">Username:</label>
@@ -94,6 +129,7 @@ const Create = () => {
               onChange={handleChangeUsername}
             />
           </div>
+          <p style={{color: "red"}} className="error">{errors.username}</p>
 
           <div className="container-input">
             <label htmlFor="email">Email:</label>
@@ -105,6 +141,7 @@ const Create = () => {
               onChange={handleChangeEmail}
             />
           </div>
+          <p style={{color: "red"}} className="error">{errors.email}</p>
 
           <div className="container-input">
             <label htmlFor="phone">Phone:</label>
@@ -116,6 +153,7 @@ const Create = () => {
               onChange={handleChangePhone}
             />
           </div>
+          <p style={{color: "red"}} className="error">{errors.phone}</p>
 
           <div className="container-btn">
             <button

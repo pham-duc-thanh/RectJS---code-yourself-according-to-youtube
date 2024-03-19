@@ -14,14 +14,18 @@ const Home = () => {
     }, []);
 
     const handleDelete = (id) => {
-        const confirm = window.confirm("MuỐn xoá à ?");
+        const confirmDelete = window.confirm("MuỐn xoá à ?");
 
-        if(confirm) {
+
+        if(confirmDelete) {
+            
             axios.delete(`${URL_USER}/${id}`)
-                .then(res => {
+                .then(reponse => {
+                    setData(prevData => prevData.filter(item => item.id !== id))
                     navigate("/");
                 })
-                .catch(err => console.log(err));
+                .catch(err => console.log(err))
+            
         }
     }
 
