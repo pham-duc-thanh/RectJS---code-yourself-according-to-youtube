@@ -56,17 +56,17 @@ const Home = () => {
                 <tbody>
 
                     {
-                        data.map((d, i) => (
-                            <tr key={i}>
-                                <td>{d.id}</td>
-                                <td>{d.fullname}</td>
-                                <td>{d.username}</td>
-                                <td>{d.email}</td>
-                                <td>{d.phone}</td>
+                        data.map((users, index) => (
+                            <tr key={index}>
+                                <td>{users.id}</td>
+                                <td>{users.fullname}</td>
+                                <td>{users.username}</td>
+                                <td>{users.email}</td>
+                                <td>{users.phone}</td>
                                 <td>
-                                    <Link to={`/read/${d.id}`} className='btn-read'>Read</Link>
-                                    <Link to={`/update/${d.id}`} className='btn-edit'>Edit</Link>
-                                    <button onClick={e => handleDelete(d.id)} className='btn-delete'>Delete</button>
+                                    <Link to={`/read/${users.id}`} className='btn-read'>Read</Link>
+                                    <Link to={`/update/${users.id}`} className='btn-edit'>Edit</Link>
+                                    <button onClick={e => handleDelete(users.id)} className='btn-delete'>Delete</button>
                                 </td>
                             </tr>
                         ))
